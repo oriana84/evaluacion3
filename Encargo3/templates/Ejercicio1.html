@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Notas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .resultado {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Formulario de Notas</h2>
+        <form method="post">
+            <label>Nota 1 (10-70):</label>
+            <input type="number" name="nota1" min="10" max="70" required>
+            <label>Nota 2 (10-70):</label>
+            <input type="number" name="nota2" min="10" max="70" required>
+            <label>Nota 3 (10-70):</label>
+            <input type="number" name="nota3" min="10" max="70" required>
+            <label>Asistencia (0-100%):</label>
+            <input type="number" name="asistencia" min="0" max="100" required>
+            <input type="submit" value="Enviar">
+        </form>
+
+        {% if resultado %}
+            <div class="resultado">
+                {{ resultado }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

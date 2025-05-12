@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Nombres</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .resultado {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h3>Nombre 1:</h3>
+        <form method="post">
+            <input type="text" name="nombre1" required>
+            <h3>Nombre 2:</h3>
+            <input type="text" name="nombre2" required>
+            <h3>Nombre 3:</h3>
+            <input type="text" name="nombre3" required>
+            <input type="submit" value="Enviar">
+        </form>
+
+        {% if resultado %}
+            <div class="resultado">
+                El nombre con mayor cantidad de caracteres es: {{ resultado.nombre }}<br>
+                El nombre tiene: {{ resultado.longitud }} caracteres
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
